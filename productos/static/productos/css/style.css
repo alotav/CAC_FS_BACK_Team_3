@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --color-principal: rgb(178, 124, 189);
+    ;
+    --color-secundario: rgba(92, 82, 82, 0.7);
+    --capa-transparente: rgba(255, 255, 255, 0.753);
+    --spacing-base: 8px;
+}
+
+html,
+body {
+    /* fuente */
+    font-family: 'Merriweather', serif;
+    height: 100%;
+    /* Asegura que el html y body ocupen toda la altura del viewport */
+    margin: 0 auto;
+    /* Elimina el margen por defecto */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/Fondo.jpg');
+    /* Ruta de la imagen en la carpeta img */
+    background-repeat: repeat;
+    /* Repite la imagen como mosaico */
+    background-size: 300px;
+    /* El tamaño original de la imagen */
+    background-color: var(--capa-transparente);
+    /* Capa blanca semi-transparente */
+    background-blend-mode: overlay;
+    /* Mezcla la capa de color con la imagen de fondo */
+}
+
+
+.contenedorPrincipal {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Hace que el contenedor principal ocupe el espacio restante */
+    padding-top: 120px;
+    /* Ajuste el padding-top según la altura combinada de las dos barras */
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+.contenidoPrincipal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenidoPrincipal section {
+    margin-top: 30px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.barraSuperior {
+    background-color: var(--color-principal);
+    /* Color rosa */
+    width: 100%;
+    height: 70px;
+    /* Ajustar la altura según sea necesario */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    padding: 5px 0 5px 5px;
+    width: 30%;
+    max-height: fit-content;
+}
+
+.logo img {
+    width: 75px;
+}
+
+.barraSuperior .barraNavegacion {
+    float: right;
+}
+
+.menuconteiner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.menuconteiner .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menuconteiner .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    display: block;
+}
+
+.menuconteiner .navbar ul li a:hover {
+    color: #FF5A2C;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+    float: left;
+}
+
+.menuconteiner label {
+    cursor: pointer;
+    display: none;
+}
+
+/* Estilos para parrafos */
+
+h2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    font-size: 38px;
+}
+.bold-text {
+    /* font-weight: 900; Negrita intensa */
+    /* font-family: 'Source Sans Pro', sans-serif; Fuente cursiva */
+    /* font-style: italic; Cursiva */
+    /* font-size: 30px; */
+    /* Puedes ajustar el tamaño según tus necesidades */
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilos para la segunda barra de navegación */
+.menuconteiner {
+    background-color: rgb(0, 0, 0);
+    /* Color negro */
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    /* Letras blancas */
+    width: 100%;
+    height: 50px;
+    /* Ajustar la altura según sea necesario */
+    position: fixed;
+    top: 70px;
+    /* Ajustar según la altura de la primera barra */
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilos para el recuadro */
+.recuadro {
+    /* border: 5px solid black; */
+    box-sizing: border-box;
+    display: flex;
+    height: 400px;
+    /* Ajustar la altura según sea necesario */
+    margin: 5% auto;
+    /* Centrar verticalmente y alinear horizontalmente */
+    max-width: 60%;
+    /* Ajustar según sea necesario */
+    overflow: hidden;
+    /* Evitar que el contenido desborde */
+    position: relative;
+
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para el contenido adicional */
+.contenidoAdicional {
+    flex: 1;
+    /* El contenido ocupa el espacio restante */
+    overflow-y: auto;
+    /* Agregar desplazamiento vertical si es necesario */
+    padding: 15px;
+    /* Ajustar según sea necesario */
+    font-weight: 900;
+    /* Negrita intensa */
+    /* font-family: 'Source Sans Pro', sans-serif; Fuente cursiva */
+    font-style: italic;
+    /* Cursiva */
+    font-size: 25px;
+    /* Cambia la fuente a Arial*/
+}
+
+/* Estilos para la imagen adicional */
+.imagenAdicional {
+    flex: 1;
+    /* La imagen ocupa el espacio restante */
+    object-fit: cover;
+    /* Ajustar la imagen para cubrir el espacio disponible */
+    height: 100%;
+    /* La imagen ocupa toda la altura del recuadro */
+    width: 50%;
+    /* La imagen ocupa la mitad del recuadro */
+    float: right;
+    margin-top: 1px;
+
+}
+
+.contenedor-imagenes {
+    display: flex;
+    /* Hace que los elementos se coloquen en línea */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+
+}
+
+.contenedor-imagenes img {
+    width: 20%;
+    /* Cada imagen ocupará un tercio del contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    margin-right: 50px;
+    /* Elimina el margen predeterminado */
+    padding: 10px;
+    /* Elimina el relleno predeterminado */
+    box-sizing: border-box;
+    /* Incluye el borde y el relleno en el ancho y alto total */
+
+}
+
+
+/* Estilos para la navegación */
+.navegacion {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    z-index: 2;
+    /* Asegura que las flechas estén sobre la imagen */
+}
+
+
+.barraNegra {
+    text-align: center;
+    padding-top: 15px;
+}
+
+
+
+/************************************************************* FOOTER */
+
+.contenidoFooter {
+    background-color: var(--color-secundario);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+}
+
+.infoContacto,
+.redesSociales {
+    width: 45%;
+    /* Define el ancho de cada columna */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.redesSociales li {
+    list-style: none;
+}
+
+.derechosReservados {
+    width: 100%;
+    /* Define el ancho de cada columna */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: rgba(92, 82, 82, 0.7);
+}
+
+/********************************** MEDIA QUERY´S */
+
+/*Edicion pantalla*/
+
+@media(max-width:991px) {
+    .menuconteiner {
+        padding: 20px;
+    }
+
+    .menuconteiner label {
+        display: initial;
+    }
+
+    .menuconteiner .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-principal);
+        display: none;
+    }
+
+    .menuconteiner .navbar ul li a:hover {
+        color: #1B1726;
+    }
+
+    .menuconteiner .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked~.navbar {
+        display: initial;
+    }
+
+    body {
+        width: 100%;
+    }
+
+
+    .recuadro {
+        /* border: 5px solid black; */
+        box-sizing: border-box;
+        display: flex;
+        height: 300px;
+        /* Ajustar la altura según sea necesario */
+        width: 100%;
+        margin: 5% auto;
+        /* Centrar verticalmente y alinear horizontalmente */
+        max-width: 90%;
+        /* Ajustar según sea necesario */
+        overflow: hidden;
+        /* Evitar que el contenido desborde */
+        position: relative;
+
+    }
+
+    .contenidoAdicional {
+        min-height: 0vh;
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 5px;
+        justify-content: center;
+    }
+
+    .imagenAdicional {
+        object-fit: cover;
+        /* Ajustar la imagen para cubrir el espacio disponible */
+        height: 100%;
+        /* La imagen ocupa toda la altura del recuadro */
+        width: 50%;
+        /* La imagen ocupa la mitad del recuadro */
+        float: right;
+        margin-top: 1px;
+    }
+
+}

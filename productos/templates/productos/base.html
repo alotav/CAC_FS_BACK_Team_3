@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'productos/css/style.css' %}">
+    <link rel="icon" href="{% static 'productos/img/choIcon.png' %}" type="{% static 'productos/image/png' %}">
+    <title>{% block title %} ChocolatesDeEnsueños {% endblock %} </title>
+    
+</head>
+
+<body>
+
+    <header class="contenedorPrincipal">
+        <div class="barraSuperior">
+            <div class="logo">
+                <img src="{% static 'productos/img/chocologo.png' %}" alt="Logo de Chocolates de Ensueños">
+            </div>
+            <nav class="barraNavegacion">
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="menuconteiner">
+                <input type="checkbox" id="menu" />
+                <label for="menu">
+                    <img src="{% static 'productos/img/menu.png' %}" class="menu-icono" alt="menu">
+                </label>
+                <!-- Segunda barra con opciones -->
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                        <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                        <li><a href="{% url 'novedades' %}">Novedades</a></li>
+                        <li><a href="{% url 'productos' %}">Productos</a></li>
+                        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--contenido-->
+    {% block content %}{% endblock %}
+
+    <footer class="pieDePagina">
+        <div class="contenidoFooter">
+            <div class="infoContacto">
+                <div>
+                    <h2>Contáctanos</h2>
+                    <p>Dirección: Av. Principal #1234, Ciudad, País</p>
+                    <p>Teléfono: +123 456 789</p>
+                    <p>Correo electrónico: info@chocolatesensueños.com</p>
+                </div>
+            </div>
+            <div class="redesSociales">
+                <div>
+                    <h2>Síguenos</h2>
+                    <ul>
+                        <li><a href="#"><img src="{% static 'productos/img/facebook.png" alt="Facebook' %}"></a></li>
+                        <li><a href="#"><img src="{% static 'productos/img/twitter.png" alt="Twitter' %}"></a></li>
+                        <li><a href="#"><img src="{% static 'productos/img/instagram.png" alt="Instagram' %}"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="derechosReservados">
+            <p>&copy; 2024 Chocolates de Ensueños. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="{% static 'productos/js/index.js' %}"></script>
+</body>
+
+</html>
