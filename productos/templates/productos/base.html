@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   {% load static %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'productos/css/style.css' %}">
-    <link rel="icon" href="{% static 'productos/img/choIcon.png' %}" type="{% static 'productos/image/png' %}">
-    <title>{% block title %} ChocolatesDeEnsueños {% endblock %} </title>
-    
+    <link rel="stylesheet" href="{% static 'productos/css/contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'productos/css/nosotros.css' %}">
+    <link rel="stylesheet" href="{% static 'productos/css/styleProd.css' %}">
+    <link rel="icon" href="{% static 'productos/img/choIcon.png' %}" type="image/png">
+    <title>{% block title %} ChocolatesDeEnsueños {% endblock %}</title>
 </head>
 
 <body>
@@ -41,8 +43,11 @@
             </div>
         </div>
     </header>
+    
     <!--contenido-->
-    {% block content %}{% endblock %}
+    {% block content %}
+    
+    {% endblock %}
 
     <footer class="pieDePagina">
         <div class="contenidoFooter">
@@ -58,9 +63,9 @@
                 <div>
                     <h2>Síguenos</h2>
                     <ul>
-                        <li><a href="#"><img src="{% static 'productos/img/facebook.png" alt="Facebook' %}"></a></li>
-                        <li><a href="#"><img src="{% static 'productos/img/twitter.png" alt="Twitter' %}"></a></li>
-                        <li><a href="#"><img src="{% static 'productos/img/instagram.png" alt="Instagram' %}"></a></li>
+                        <li><a href="#"><img src="{% static 'productos/img/facebook.png' %}" alt="Facebook"></a></li>
+                        <li><a href="#"><img src="{% static 'productos/img/twitter.png' %}" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="{% static 'productos/img/instagram.png' %}" alt="Instagram"></a></li>
                     </ul>
                 </div>
             </div>
