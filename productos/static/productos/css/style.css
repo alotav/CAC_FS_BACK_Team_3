@@ -29,7 +29,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    background-image: url('../img/Fondo.jpg');
+    background-image: url('/static/productos/img/Fondo.jpg');
     /* Ruta de la imagen en la carpeta img */
     background-repeat: repeat;
     /* Repite la imagen como mosaico */
