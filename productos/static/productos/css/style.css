@@ -51,6 +51,7 @@ body {
     /* Ajuste el padding-top según la altura combinada de las dos barras */
     margin-left: 0 auto;
     margin-right: 0 auto;
+    background-color: #FF5A2C;
 }
 
 .contenidoPrincipal {

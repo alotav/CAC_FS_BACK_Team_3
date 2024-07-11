@@ -1,4 +1,6 @@
 {% extends "productos/base.html" %}
+
+
 {% block title %} Mi web personal {% endblock %}
 {% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
 
@@ -8,19 +10,8 @@
 {% endblock %}
 
 {% block content %}
-
-<header class="contenedorPrincipal">
-    <div class="barraSuperior">
-        <div class="logo">
-            <img src="./img/chocologo.png" alt="Logo de Chocolates de Ensueños">
-        </div>
-        <nav class="barraNavegacion">
-        </nav>
-    </div>
-
-    <div class="container">
+<div class="container">
         <div class="contenidoPrincipal">
-
             <section>
                 <h2>Chocolates de Ensueños</h2>
 
@@ -36,6 +27,7 @@
                 <h1 class="bold-text">NOVEDADES</h1>
             
         </div>
+
         <MAIN>
             <div class="recuadro">
                 <div id="imagen-texto" class="contenidoAdicional">
@@ -49,13 +41,14 @@
             <section>
                 <h1 class="bold-text">Nuestros Productos</h1>
                 <div class="contenedor-imagenes">
-                    <img src="img/Barra2.jpg" alt="Imagen 1">
-                    <img src="img/Bombones3.jpg" alt="Imagen 2">
-                    <img src="img/Alfajores1.jpg" alt="Imagen 3">
+                    <img src="{% static 'productos/img/Barra2.jpg'%}" alt="Imagen 1">
+                    <img src="{% static 'productos/img/Bombones3.jpg'%}" alt="Imagen 2">
+                    <img src="{% static 'productos/img/Alfajores1.jpg'%}" alt="Imagen 3">
                 </div>
             </section>  
         </MAIN>
     </div> 
+</div>
     
 </header>
 
