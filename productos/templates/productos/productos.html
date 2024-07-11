@@ -1,5 +1,25 @@
 {% extends "productos/base.html" %}
-
+{% load static %}
 {% block content %}
+
+<div class="prodConteiner">
+    <h1>Nuestros Productos</h1>
+    <div class="prodContent">
+        {% for producto in productos %}
+        <!--Producto -->
+        <div class="prod1">
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+            <div class="prodTxt">
+                <h3>{{ producto.nombre }}</h3>
+                <p>{{ producto.descripcion }}</p>
+                <div class="price">
+                    <p>${{ producto.precio }}</p>
+                    <a href="#" class="btn-1">Comprar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

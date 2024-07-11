@@ -26,6 +26,7 @@ urlpatterns = [
     path('contacto/', prod_views.contacto, name="contacto"),
     path('novedades/', prod_views.novedades, name="novedades"),
     path('productos/', prod_views.productos, name="productos")
+    
 ]
 
 if settings.DEBUG:
