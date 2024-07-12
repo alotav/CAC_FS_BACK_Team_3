@@ -1,8 +1,7 @@
 {% extends "productos/base.html" %}
-
-
+{% load static %}
 {% block title %} Chocolates {% endblock %}
-{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+{% block background %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
 
 {% block headers %}
 
@@ -10,45 +9,88 @@
 
 {% block content %}
 <div class="container">
-        <div class="contenidoPrincipal">
-            <section>
-                <h2>Chocolates de Ensueños</h2>
+    <div class="contenidoPrincipal">
+        <section>
+            <h2>Chocolates de Ensueños</h2>
+            <p class="bold-text">Bienvenidos a Chocolates de Ensueños, donde la pasión por el cacao se convierte en arte.
+                Nos especializamos en la fabricación artesanal de chocolates finos, utilizando ingredientes de la más alta calidad 
+                y métodos tradicionales. Nuestro compromiso es ofrecer una experiencia de sabor única, combinando innovación y tradición en cada bocado.
+                Descubre la magia del chocolate con Chocolates de Ensueños.</p>
+            <p class="bold-text">En nuestra sección de novedades, mantente al tanto de las últimas noticias y
+                actualizaciones sobre nuestra
+                empresa y la industria del chocolate.</p>
+        </section>
+        <br>
+        <h1 class="bold-text">NOVEDADES</h1>
+    </div>
 
-                <p class="bold-text">Bienvenidos a Chocolates de Ensueños, donde la pasión por el cacao se convierte en arte.
-                    Nos especializamos en la fabricación artesanal de chocolates finos, utilizando ingredientes de la más alta calidad 
-                    y métodos tradicionales. Nuestro compromiso es ofrecer una experiencia de sabor única, combinando innovación y tradición en cada bocado.
-                    Descubre la magia del chocolate con Chocolates de Ensueños.</p>
-                <p class="bold-text">En nuestra sección de novedades, mantente al tanto de las últimas noticias y
-                    actualizaciones sobre nuestra
-                    empresa y la industria del chocolate.</p>
-            </section>
-            <br>
-                <h1 class="bold-text">NOVEDADES</h1>
-            
-        </div>
-
-        <MAIN>
-            <div class="recuadro">
-                <div id="imagen-texto" class="contenidoAdicional">
-                    <!-- Aquí se cargarán las imágenes y textos de novedades -->
-                </div>
-                <div class="navegacion">
-                    <button id="anterior">&#10094;</button>
-                    <button id="siguiente">&#10095;</button>
-                </div>
+    <main>
+        <div class="recuadro">
+            <div id="imagen-texto" class="contenidoAdicional">
+                <!-- Aquí se cargarán las imágenes y textos de novedades -->
+                {% if novedades %}
+                    <!-- Mostramos novedades -->
+                    {% for novedad in novedades %}
+                        <div class="novedad contenidoNovedad">
+                            <img class="img" src="{{ novedad.imagen.url }}" alt="{{ novedad.nombre }}">
+                            <h3>{{ novedad.nombre }}</h3>
+                            <p>{{ novedad.descripcion }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay novedades disponibles.</p>
+                {% endif %}
             </div>
-            <section>
-                <h1 class="bold-text">Nuestros Productos</h1>
-                <div class="contenedor-imagenes">
-                    <img src="{% static 'productos/img/Barra2.jpg'%}" alt="Imagen 1">
-                    <img src="{% static 'productos/img/Bombones3.jpg'%}" alt="Imagen 2">
-                    <img src="{% static 'productos/img/Alfajores1.jpg'%}" alt="Imagen 3">
-                </div>
-            </section>  
-        </MAIN>
-    </div> 
-</div>
-    
-</header>
+            <div class="navegacion">
+                <button id="anterior">&#10094;</button>
+                <button id="siguiente">&#10095;</button>
+            </div>
+        </div>
+        
+        <section>
+            <h1 class="bold-text">Nuestros Productos</h1>
+            <div class="contenedor-imagenes">
+                <img src="{% static 'productos/img/Barra2.jpg'%}" alt="Imagen 1">
+                <img src="{% static 'productos/img/Bombones3.jpg'%}" alt="Imagen 2">
+                <img src="{% static 'productos/img/Alfajores1.jpg'%}" alt="Imagen 3">
+            </div>
+        </section>  
+    </main>
+</div> 
+
+
+<script>
+    console.log("Se leyo el js");
+    document.addEventListener('DOMContentLoaded', function() {
+    const imagenes = document.querySelectorAll('.novedad'); // Selecciona todas las imágenes de novedades
+    let currentIndex = 0; // Índice de la imagen actual
+
+    function mostrarImagen(index) {
+        // Oculta todas las imágenes
+        imagenes.forEach(imagen => imagen.style.display = 'none');
+        // Muestra la imagen actual
+        imagenes[index].style.display = 'block';
+    }
+
+    function mostrarImagenAnterior() {
+        currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
+        mostrarImagen(currentIndex);
+    }
+
+    function mostrarImagenSiguiente() {
+        currentIndex = (currentIndex + 1) % imagenes.length;
+        mostrarImagen(currentIndex);
+    }
+
+    // Mostrar la primera imagen al cargar la página
+    mostrarImagen(currentIndex);
+
+    // Agregar listeners a los botones de navegación
+    document.getElementById('anterior').addEventListener('click', mostrarImagenAnterior);
+    document.getElementById('siguiente').addEventListener('click', mostrarImagenSiguiente);
+});
+</script>
+
+<!-- <script src="{% static 'productos/js/index.js'%}"></script> -->
 
 {% endblock %}

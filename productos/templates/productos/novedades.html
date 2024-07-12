@@ -1,11 +1,37 @@
-{% extends "productos/base.html" %}
+{% extends "productos/base.html" %} {% block content %}
+<section class="novedades">
+  <h1>Novedades</h1>
+  <article>
+    <h2>Nueva Línea de Chocolates Veganos</h2>
+    <p>
+      Nos complace anunciar el lanzamiento de nuestra nueva línea de chocolates
+      veganos, hechos con los mejores ingredientes y sin comprometer el sabor.
+      ¡Prueba estos deliciosos chocolates hoy mismo!
+    </p>
+  </article>
+  <article>
+    <h2>Promoción Especial del Mes</h2>
+    <p>
+      Durante este mes, disfruta de un 20% de descuento en todos nuestros
+      chocolates artesanales. No te pierdas esta oportunidad de degustar
+      nuestros productos a un precio especial.
+    </p>
+  </article>
+  <article>
+    <h2>Evento de Degustación</h2>
+    <p>
+      Acompáñanos en nuestro próximo evento de degustación donde podrás probar
+      nuestras últimas creaciones y conocer más sobre el proceso de elaboración
+      del chocolate. ¡Te esperamos!
+    </p>
+  </article>
+</section>
 
-{% block content %}
-
+<!-- 
 <section class="novedades">
     <h1>Novedades</h1>
     
-    <!-- Mostrar la primera novedad -->
+    
     <article class="novedad">
         <h2>{{ primer_novedad.nombre }}</h2>
         <div class="descripcion">
@@ -16,7 +42,7 @@
         </div>
     </article>
 
-    <!-- Mostrar todas las demás novedades -->
+    
     {% for novedad in todas_novedades %}
     <article class="novedad">
         <h2>{{ novedad.nombre }}</h2>
@@ -28,6 +54,6 @@
         </div>
     </article>
     {% endfor %}
-</section>
+</section> -->
 
 {% endblock %}

@@ -51,6 +51,16 @@ h6 {
 }
 
 .contenidoPrincipal {
+    background-image: url('../img/Fondo.jpg');
+    /* Ruta de la imagen en la carpeta img */
+    background-repeat: repeat;
+    /* Repite la imagen como mosaico */
+    background-size: 300px;
+    /* El tamaño original de la imagen */
+    background-color: var(--capa-transparente);
+    /* Capa blanca semi-transparente */
+    background-blend-mode: overlay;
+    /* Mezcla la capa de color con la imagen de fondo */
     flex: 1;
 }
 
@@ -140,7 +150,7 @@ h6 {
 }
 
 .recuadro {
-    border: 5px solid black;
+    /* border: 5px solid black; */
     box-sizing: border-box;
     display: flex;
     height: 400px;
@@ -344,7 +354,7 @@ h6 {
     }
 
     .recuadro {
-        border: 5px solid black;
+        /* border: 5px solid black; */
         box-sizing: border-box;
         display: flex;
         height: 300px;

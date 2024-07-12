@@ -184,7 +184,7 @@ body {
 
 /* Estilos para el recuadro */
 .recuadro {
-    border: 5px solid black;
+    /* border: 5px solid black; */
     box-sizing: border-box;
     display: flex;
     height: 400px;
@@ -215,12 +215,23 @@ body {
 }
 
 section.nosotros {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 0 auto;
+
+    background-image: url('../img/Fondo.jpg');
+    /* Ruta de la imagen en la carpeta img */
+    background-repeat: repeat;
+    /* Repite la imagen como mosaico */
+    background-size: 300px;
+    /* El tamaño original de la imagen */
+    background-color: var(--capa-transparente);
+    /* Capa blanca semi-transparente */
+    background-blend-mode: overlay;
+    /* Mezcla la capa de color con la imagen de fondo */
 }
 
 section.nosotros h1,
@@ -481,7 +492,7 @@ section.nosotros ul {
     }
 
     .recuadro {
-        border: 5px solid black;
+        /* border: 5px solid black; */
         box-sizing: border-box;
         display: flex;
         height: 300px;
